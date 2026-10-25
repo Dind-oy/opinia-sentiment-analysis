@@ -1,0 +1,735 @@
+/* ==========================================================
+   DROPDOWN EXPORT
+   ========================================================== */
+.export-wrapper {
+  position: relative;
+}
+
+.export-caret {
+  margin-left: 4px;
+  font-size: 11px;
+}
+
+.export-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+  width: 255px;
+  padding: 8px;
+  border: 1px solid #e5e2e1;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(36, 27, 31, 0.13);
+}
+
+.export-menu[hidden] {
+  display: none;
+}
+
+.export-menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #1c1b1b;
+  text-align: left;
+  cursor: pointer;
+}
+
+.export-menu button:hover {
+  background: #f6f3f2;
+}
+
+.export-menu button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.export-menu strong,
+.export-menu small {
+  display: block;
+}
+
+.export-menu strong {
+  margin-bottom: 2px;
+  font-size: 13px;
+}
+
+.export-menu small {
+  color: #7f7478;
+  font-size: 11px;
+}
+
+.export-format {
+  display: grid;
+  flex: 0 0 42px;
+  height: 34px;
+  place-items: center;
+  border-radius: 5px;
+  background: #e5eddb;
+  color: #41493c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.export-format.pdf {
+  background: #fce4ec;
+  color: #76646b;
+}
+
+/* ==========================================================
+   REPORT A4 UNTUK HTML2PDF
+   ========================================================== */
+.pdf-report {
+  position: fixed;
+  top: 0;
+  left: -12000px;
+  z-index: -9999;
+  width: 210mm;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.pdf-page,
+.pdf-page * {
+  box-sizing: border-box;
+}
+
+.pdf-page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  padding: 13mm 13mm 12mm;
+  background: #ffffff;
+  color: #1c1b1b;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.pdf-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 5mm;
+  border-bottom: 1px solid #dcd9d9;
+}
+
+.pdf-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-brand-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 4px;
+  background: #fce4ec;
+}
+
+.pdf-brand-icon::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 2px solid #6b5a60;
+  border-radius: 2px;
+  background:
+    linear-gradient(to top, #6b5a60 0 55%, transparent 55%) 1px 5px / 2px 6px no-repeat,
+    linear-gradient(to top, #6b5a60 0 80%, transparent 80%) 5px 2px / 2px 9px no-repeat,
+    linear-gradient(to top, #6b5a60 0 35%, transparent 35%) 9px 7px / 2px 4px no-repeat;
+}
+
+.pdf-brand-name {
+  color: #6b5a60;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pdf-brand-subtitle {
+  margin-top: 2px;
+  color: #4d4447;
+  font-size: 8px;
+}
+
+.pdf-header-meta {
+  color: #4d4447;
+  font-size: 8px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.pdf-header-meta strong {
+  color: #1c1b1b;
+  font-size: 9px;
+}
+
+.pdf-title-block {
+  margin-top: 9mm;
+}
+
+.pdf-title-block h1 {
+  margin: 0;
+  color: #1c1b1b;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.pdf-title-block p {
+  margin: 3mm 0 0;
+  color: #7f7478;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.pdf-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6mm;
+  margin-top: 9mm;
+}
+
+.pdf-metric-card {
+  min-height: 33mm;
+  padding: 5mm 4mm;
+  border: 1px solid #dcd9d9;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.pdf-metric-label {
+  min-height: 9mm;
+  color: #4d4447;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.pdf-metric-value {
+  margin-top: 1mm;
+  color: #6b5a60;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.pdf-metric-note {
+  margin-top: 4mm;
+  color: #4d4447;
+  font-size: 7px;
+  line-height: 1.4;
+}
+
+.pdf-metric-bar {
+  width: 100%;
+  height: 3px;
+  margin-top: 5mm;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e5e2e1;
+}
+
+.pdf-metric-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #6b5a60;
+}
+
+.pdf-section-title {
+  margin: 9mm 0 4mm;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 8.5px;
+}
+
+.pdf-table thead {
+    background: var(--op-soft);
+}
+
+.pdf-table th {
+  padding: 3.5mm 3mm;
+  color: #76646b;
+  font-size: 7.5px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.pdf-table td {
+  padding: 4mm 3mm;
+  border-bottom: 1px solid #e5e2e1;
+  color: #1c1b1b;
+  vertical-align: middle;
+}
+
+.pdf-table th:nth-child(1),
+.pdf-table td:nth-child(1) { width: 22%; }
+.pdf-table th:nth-child(2),
+.pdf-table td:nth-child(2) { width: 36%; }
+.pdf-table th:nth-child(3),
+.pdf-table td:nth-child(3) { width: 11%; text-align: center; }
+.pdf-table th:nth-child(4),
+.pdf-table td:nth-child(4) { width: 10%; text-align: center; }
+.pdf-table th:nth-child(5),
+.pdf-table td:nth-child(5) { width: 10%; text-align: center; }
+.pdf-table th:nth-child(6),
+.pdf-table td:nth-child(6) { width: 11%; text-align: center; }
+
+.pdf-time {
+  display: block;
+  margin-top: 1.5mm;
+  color: #7f7478;
+  font-size: 6.5px;
+}
+
+.pdf-badge {
+  display: inline-block;
+  min-width: 22px;
+  padding: 1.3mm 2mm;
+  border-radius: 3px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pdf-badge-positive {
+  background: #d9f5e8;
+  color: #177a58;
+}
+
+.pdf-badge-negative {
+  background: #ffe0e0;
+  color: #b42323;
+}
+
+.pdf-accuracy {
+  color: #636037;
+  font-weight: 700;
+}
+
+.pdf-empty {
+  padding: 14mm 0 !important;
+  color: #7f7478 !important;
+  text-align: center !important;
+}
+
+.pdf-footer {
+  position: absolute;
+  right: 13mm;
+  bottom: 9mm;
+  left: 13mm;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 3.5mm;
+  border-top: 1px solid #dcd9d9;
+  color: #4d4447;
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.pdf-footer-right {
+  display: flex;
+  gap: 6mm;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   PERBAIKAN PDF MULTI-HALAMAN + FONT POPPINS
+   ========================================================== */
+
+.pdf-report {
+  position: absolute;
+  top: 0;
+  left: -12000px;
+  z-index: 1;
+  width: 794px;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.pdf-page {
+  width: 794px;
+  height: 1123px;
+  padding: 49px 49px 45px;
+  break-after: page;
+  page-break-after: always;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.pdf-page:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+.pdf-page-continuation .pdf-title-block {
+  margin-top: 26px;
+}
+
+.pdf-page-continuation .pdf-section-title {
+  margin-top: 28px;
+}
+
+.pdf-page,
+.pdf-page * {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.pdf-table th {
+  padding: 10px 9px;
+  font-size: 7.5px;
+}
+
+.pdf-table td {
+  padding: 11px 9px;
+  font-size: 8px;
+  line-height: 1.25;
+}
+
+.pdf-time {
+  margin-top: 4px;
+  font-size: 6.5px;
+}
+
+.pdf-page-continuation .pdf-table td {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.pdf-footer {
+  right: 49px;
+  bottom: 34px;
+  left: 49px;
+}
+
+
+/* ==========================================================
+   KAPASITAS TABEL PDF
+   Halaman 1: maksimal 12 baris
+   Halaman lanjutan: maksimal 20 baris
+   ========================================================== */
+
+.pdf-table th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pdf-table td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 7.8px;
+  line-height: 1.18;
+}
+
+.pdf-time {
+  margin-top: 2px;
+  font-size: 6.2px;
+}
+
+.pdf-page-continuation .pdf-table td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pdf-page-continuation .pdf-title-block {
+  margin-top: 18px;
+}
+
+.pdf-page-continuation .pdf-section-title {
+  margin-top: 20px;
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY PDF — VERSI LEBIH TERBACA
+   Body tabel 12px, judul dan angka dibuat proporsional.
+   ========================================================== */
+
+.pdf-page,
+.pdf-page * {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Judul utama laporan */
+.pdf-title-block h1 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+/* Deskripsi di bawah judul */
+.pdf-title-block p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Judul bagian Log Analisis */
+.pdf-section-title {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+/* Label kartu statistik */
+.pdf-metric-label {
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+/* Angka besar pada kartu statistik */
+.pdf-metric-value {
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+/* Catatan kecil pada kartu */
+.pdf-metric-note {
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* Header tabel */
+.pdf-table th {
+  padding: 9px 8px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+/* Isi tabel */
+.pdf-table td {
+  padding: 10px 8px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* Jam di bawah tanggal */
+.pdf-time {
+  margin-top: 3px;
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+/* Angka positif/negatif dalam badge */
+.pdf-badge {
+  min-width: 28px;
+  padding: 4px 7px;
+  font-size: 11px;
+}
+
+/* Akurasi per baris */
+.pdf-accuracy {
+  font-size: 12px;
+}
+
+/* Brand dan metadata atas */
+.pdf-brand-name {
+  font-size: 11px;
+}
+
+.pdf-brand-subtitle,
+.pdf-header-meta {
+  font-size: 9px;
+}
+
+.pdf-header-meta strong {
+  font-size: 10px;
+}
+
+/* Footer */
+.pdf-footer {
+  font-size: 9px;
+}
+
+/* Kapasitas halaman setelah font diperbesar:
+   halaman pertama 8 baris, halaman lanjutan 14 baris. */
+.pdf-page-continuation .pdf-table td {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+
+/* ==========================================================
+   KAPASITAS FINAL PDF
+   Maksimal 10 dataset pada setiap halaman.
+   ========================================================== */
+
+.pdf-table td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pdf-page-continuation .pdf-table td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+
+/* ==========================================================
+   KOP LAPORAN OPINIA - SERAGAM + PERBAIKAN BARIS BLUR
+   ========================================================== */
+
+/* Jangan biarkan animasi halaman web ikut tertangkap html2canvas. */
+.pdf-report,
+.pdf-report *,
+.pdf-report *::before,
+.pdf-report *::after {
+  animation: none !important;
+  transition: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.pdf-report .pdf-page {
+  transform: none !important;
+  background: #ffffff !important;
+}
+
+.pdf-report .pdf-table tbody tr,
+.pdf-report .pdf-table tbody td,
+.pdf-report .pdf-table tbody span {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.pdf-header-unified {
+  min-height: 50px;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d0c3c7;
+}
+
+.pdf-opinia-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 8px;
+  background: #1c1b1b;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+.pdf-opinia-mark::before {
+  content: none !important;
+}
+
+.pdf-brand-name {
+  color: #1c1b1b;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.pdf-brand-subtitle {
+  margin-top: 2px;
+  color: #76646b;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pdf-header-meta {
+  display: grid;
+  gap: 3px;
+  min-width: 210px;
+  color: #4d4447;
+  font-size: 9px;
+  font-style: normal;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.pdf-header-meta div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.pdf-header-meta span {
+  color: #7f7478;
+  font-weight: 400;
+}
+
+.pdf-header-meta strong {
+  color: #1c1b1b;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.pdf-title-centered {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.pdf-title-centered h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.pdf-title-centered p {
+  max-width: 610px;
+  margin: 8px auto 0;
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Tepat 10 baris per halaman, tanpa baris terpotong atau memudar. */
+.pdf-table tbody tr {
+  height: 38px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  background: #ffffff;
+}
+
+.pdf-table td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.pdf-table th {
+  font-size: 10px;
+}
+
+.pdf-time {
+  font-size: 8px;
+}
+
+.pdf-badge,
+.pdf-accuracy {
+  font-size: 10px;
+}
+
+.pdf-page-continuation .pdf-title-centered {
+  margin-top: 24px;
+}

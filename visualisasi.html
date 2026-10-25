@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Visualisasi - Opinia</title>
+  <link rel="icon" type="image/png" href="ui/2.png">
+  <script src="js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/notifications.css" rel="stylesheet" />
+  <!-- Hanya dipakai untuk font PDF, tidak mengubah layout halaman -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <script src="js/session-guard.js"></script>
+  <link href="css/opinia-theme.css" rel="stylesheet" />
+  <link href="css/opinia-theme-blue.css" rel="stylesheet" />
+</head>
+
+<body class="opinia-app">
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h3>🏷️ ML Sentiment</h3>
+      </div>
+      <!-- Profil pengguna dipindahkan ke atas agar konsisten dengan halaman lain -->
+      <div class="user-profile">
+        <img alt="User Avatar" class="user-avatar"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23d4a5a5'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23fff'/%3E%3Cpath d='M30 70 Q50 60 70 70 L70 100 L30 100 Z' fill='%23fff'/%3E%3C/svg%3E" />
+        <div class="user-info">
+          <p class="user-name">Pengguna</p>
+          <p class="user-role">Researcher</p>
+        </div>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><span class="menu-icon">📊</span> Dashboard</a></li>
+        <li><a href="upload-dataset.html"><span class="menu-icon">📁</span> Upload Dataset</a></li>
+        <li><a href="klasifikasi.html"><span class="menu-icon">🏷️</span> Klasifikasi Sentimen</a></li>
+        <li><a href="prediksi-manual.html"><span class="menu-icon">🧠</span> Prediksi Manual</a></li>
+        <li class="active"><a href="visualisasi.html"><span class="menu-icon">📈</span> Visualisasi</a></li>
+        <li><a href="riwayat.html"><span class="menu-icon">⏱️</span> Riwayat Analisis</a></li>
+        <li><a href="laporan.html"><span class="menu-icon">📄</span> Laporan</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a class="logout" href="backend/logout_redirect.php">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 17l5-5-5-5"></path>
+            <path d="M15 12H3"></path>
+            <path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"></path>
+          </svg>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb">
+          Model Analysis <span>&gt; Visualisasi Kriteria</span>
+        </div>
+        <div class="topbar-right">
+          <button class="notification-btn" type="button">🔔</button>
+        </div>
+      </header>
+      <div class="content">
+        <div class="page-header">
+          <h1>Visualisasi Hasil Analisis</h1>
+          <p>Distribusi sentimen dan metrik evaluasi model dari data akun Anda.</p>
+        </div>
+        <div class="viz-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3>Distribusi Sentimen</h3>
+              <button class="menu-dots" type="button">⋮</button>
+            </div>
+            <div class="pie-chart">
+              <div class="pie-container">
+                <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="100" fill="none" r="80" stroke="#4caf50" stroke-dasharray="335 522"
+                    stroke-dashoffset="0" stroke-width="40"></circle>
+                  <circle cx="100" cy="100" fill="none" r="80" stroke="#f44336" stroke-dasharray="183 522"
+                    stroke-dashoffset="-335" stroke-width="40"></circle>
+                </svg>
+                <div class="pie-center">
+                  1.240<br /><small>Total Data</small>
+                </div>
+              </div>
+              <div class="pie-legend">
+                <div class="legend-item"><i class="bi bi-circle-fill positive-dot"></i> Positif 65% (806)</div>
+                <div class="legend-item"><i class="bi bi-circle-fill negative-dot"></i> Negatif 35% (434)</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3>Evaluasi Model</h3>
+              <span class="badge-model">✓ Model Stabil</span>
+            </div>
+            <div class="eval-chart">
+              <svg viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <line stroke="#ddd" stroke-width="1" x1="40" x2="380" y1="170" y2="170"></line>
+                <line stroke="#ddd" stroke-width="1" x1="40" x2="40" y1="20" y2="170"></line>
+                <rect fill="#3498db" height="85" width="30" x="80" y="85"></rect>
+                <rect fill="#2ecc71" height="75" width="30" x="140" y="95"></rect>
+                <rect fill="#f39c12" height="65" width="30" x="200" y="105"></rect>
+                <rect fill="#9b59b6" height="80" width="30" x="260" y="90"></rect>
+                <text font-size="12" text-anchor="middle" x="95" y="190">Akurasi</text>
+                <text font-size="12" text-anchor="middle" x="155" y="190">Presisi</text>
+                <text font-size="12" text-anchor="middle" x="215" y="190">Recall</text>
+                <text font-size="12" text-anchor="middle" x="275" y="190">F1-Score</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card insight-card">
+          <div class="insight-header">
+            <span class="insight-icon"><i class="bi bi-lightbulb-fill"></i></span>
+            <h3>Insight Utama</h3>
+            <button class="export-btn" id="btnExportVisualisasiPdf" type="button">
+              <i class="bi bi-download"></i> Ekspor PDF
+            </button>
+          </div>
+          <p>
+            Sentimen positif mendominasi dataset dengan rasio hampir 2:1.
+            Performa model Random Forest menunjukkan tingkat akurasi yang tinggi
+            (92%), mengindikasikan kemampuan klasifikasi yang sangat baik pada
+            data teks spesifik ini.
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- Library PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/visualisasi.js"></script>
+  <script src="js/opinia-ui.js"></script>
+  <script src="js/logout-confirm.js"></script>
+</body>
+
+</html>

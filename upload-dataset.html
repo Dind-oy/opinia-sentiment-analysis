@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Upload Dataset - Opinia</title>
+    <link rel="icon" type="image/png" href="ui/2.png">
+    <script src="js/theme-toggle.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/notifications.css" rel="stylesheet" />
+    <link href="css/opinia-theme.css" rel="stylesheet" />
+    <link href="css/opinia-theme-blue.css" rel="stylesheet" />
+    <script src="js/session-guard.js"></script>
+</head>
+
+<body class="opinia-app">
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>ML Sentiment<br />Analyzer</h3>
+            </div>
+            <div class="user-profile">
+                <img alt="User Avatar" class="user-avatar"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23d4a5a5'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23fff'/%3E%3Cpath d='M30 70 Q50 60 70 70 L70 100 L30 100 Z' fill='%23fff'/%3E%3C/svg%3E" />
+                <div class="user-info">
+                    <p class="user-name">Adinda</p>
+                    <p class="user-role">Researcher</p>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><span class="menu-icon">📊</span> Dashboard</a></li>
+                <li class="active"><a href="upload-dataset.html"><span class="menu-icon">📁</span> Upload Dataset</a>
+                </li>
+                <li><a href="klasifikasi.html"><span class="menu-icon">🏷️</span> Klasifikasi Sentimen</a></li>
+                <li><a href="prediksi-manual.html"><span class="menu-icon">🧠</span> Prediksi Manual</a></li>
+                <li><a href="visualisasi.html"><span class="menu-icon">📈</span> Visualisasi</a></li>
+                <li><a href="riwayat.html"><span class="menu-icon">⏱️</span> Riwayat Analisis</a></li>
+                <li><a href="laporan.html"><span class="menu-icon">📄</span> Laporan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a class="logout" href="backend/logout_redirect.php"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <h2></h2>
+                <div class="topbar-right">
+                    <button class="notification-btn">🔔</button>
+                </div>
+            </header>
+            <div class="content">
+                <div class="page-header">
+                    <h1>Upload Dataset</h1>
+                    <p>Unggah data ulasan untuk diproses oleh model Random Forest secara aman.</p>
+                </div>
+                <div class="info-box">
+                    <span class="info-icon"><i class="bi bi-info-circle-fill"></i></span>
+                    <div>
+                        <strong>Instruksi Format Data</strong>
+                        <p>Unggah file CSV berisi ulasan Mobile Legends. Format: [Review, Label]</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="upload-area">
+                        <div class="upload-icon">☁️</div>
+                        <h3>Tarik &amp; Lepas File CSV</h3>
+                        <p>atau klik untuk memilih dari perangkat</p>
+                        <input accept=".csv" id="fileInput" style="display:none" type="file" />
+                        <button class="btn-pilih-file" id="btnPilihFile" type="button"><i
+                                class="bi bi-folder2-open"></i> Pilih File</button>
+                        <p id="fileName" style="margin-top:8px;color:#666"></p>
+                    </div>
+                </div>
+                <button class="btn-unggah"><i class="bi bi-info-circle-fill"></i> Unggah Dataset</button>
+                <div id="uploadStatus" style="margin-top:12px;color:#333"></div>
+                <div class="info-cards-grid">
+                    <div class="info-card">
+                        <div class="card-icon"><i class="bi bi-bar-chart-line"></i></div>
+                        <strong>Kapasitas Maksimal</strong>
+                        <p>Hingga 100,000 baris (50MB)</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon"><i class="bi bi-shield-lock"></i></div>
+                        <strong>Keamanan Data</strong>
+                        <p>Dataset diproses secara lokal &amp; aman</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/notifications.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/opinia-ui.js"></script>
+    <script src="js/logout-confirm.js"></script>
+</body>
+
+</html>

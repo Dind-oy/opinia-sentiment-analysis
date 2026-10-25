@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk - Opinia</title>
+  <link rel="icon" type="image/png" href="ui/2.png">
+  <script src="js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="css/opinia-auth.css">
+  <link rel="stylesheet" href="css/opinia-theme-blue.css">
+</head>
+<body class="opinia-auth-page">
+  <main class="auth-shell">
+    <section class="auth-visual" aria-label="Ilustrasi analisis sentimen">
+      <a class="auth-brand" href="index.html">
+        <span class="auth-brand-mark">op</span>
+        <span><strong>Opinia</strong><small>Sentiment Intelligence</small></span>
+      </a>
+
+      <div class="visual-stage">
+        <div class="visual-glow glow-one"></div>
+        <div class="visual-glow glow-two"></div>
+        <div class="orb orb-positive">+</div>
+        <div class="orb orb-negative">−</div>
+        <div class="analytics-window">
+          <div class="window-head"><span></span><span></span><span></span></div>
+          <div class="mini-title">Sentiment Overview</div>
+          <div class="mini-chart">
+            <i style="--bar:42%"></i><i style="--bar:68%"></i><i style="--bar:52%"></i><i style="--bar:84%"></i><i style="--bar:71%"></i>
+          </div>
+          <div class="mini-metrics"><b>82.1%</b><span>Model accuracy</span></div>
+        </div>
+      </div>
+
+      <div class="visual-copy">
+        <span class="eyebrow">ANALISIS SENTIMEN AKADEMIK</span>
+        <h1>Mengubah opini menjadi insight yang dapat dibaca.</h1>
+        <p>Kelola dataset, prediksi komentar, visualisasi, dan laporan dalam satu ruang analisis yang rapi.</p>
+      </div>
+    </section>
+
+    <section class="auth-form-panel">
+      <div class="auth-form-wrap">
+        <div class="mobile-brand"><span class="auth-brand-mark">op</span><strong>Opinia</strong></div>
+        <span class="form-kicker">SELAMAT DATANG KEMBALI</span>
+        <h2>Masuk ke akun</h2>
+        <p class="form-lead">Lanjutkan analisis menggunakan akun yang sudah terdaftar.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="auth-field">
+            <label for="username">Username</label>
+            <div class="auth-input"><span class="field-icon">@</span><input type="text" id="username" autocomplete="username" placeholder="Masukkan username" required></div>
+          </div>
+
+          <div class="auth-field">
+            <label for="password">Password</label>
+            <div class="auth-input"><span class="field-icon">●</span><input type="password" id="password" autocomplete="current-password" placeholder="Masukkan password" required><button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Tampilkan password">◉</button></div>
+          </div>
+
+          <div class="auth-options"><label><input type="checkbox"> <span>Ingat saya</span></label><span class="secure-note">Sesi aman</span></div>
+          <button type="submit" class="auth-submit">Masuk <span>→</span></button>
+        </form>
+
+        <p class="auth-switch">Belum memiliki akun? <a href="daftar.html">Daftar sekarang</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

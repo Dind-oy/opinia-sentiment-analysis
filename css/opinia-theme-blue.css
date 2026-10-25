@@ -1,0 +1,375 @@
+/* ============================================================
+   OPINIA THEME — BLUE (Maskulin)
+   Aktif ketika <html> punya data-theme="blue"
+   ============================================================ */
+
+[data-theme="blue"] {
+  --op-primary:        #547A95;
+  --op-primary-dark:   #28396C;
+  --op-primary-hover:  #3d6280;
+  --op-primary-soft:   #dde8f0;
+  --op-primary-tint:   #E8EDF2;
+
+  --op-bg:             #E8EDF2;
+  --op-surface:        #ffffff;
+  --op-surface-soft:   #f0f4f8;
+  --op-border:         #c8d4de;
+  --op-border-light:   #dae3eb;
+
+  --op-text:           #2C3947;
+  --op-muted:          #5a6e7f;
+  --op-subtle:         #8fa4b5;
+
+  --op-accent:         #C2A56D;
+  --op-accent-soft:    #f5edde;
+
+  --op-sidebar-bg:     #f0f4f8;
+  --op-sidebar-active: #dde8f0;
+  --op-sidebar-text:   #2C3947;
+  --op-sidebar-muted:  #5a6e7f;
+
+  --op-success:        #16a34a;
+  --op-warning:        #f59e0b;
+  --op-danger:         #dc2626;
+}
+
+/* Landing page blue override */
+[data-theme="blue"] .landing-refined {
+  --landing-ink:        #2C3947;
+  --landing-muted:      #5a6e7f;
+  --landing-mauve:      #547A95;
+  --landing-mauve-dark: #28396C;
+  --landing-pink:       #C2A56D;
+  --landing-pink-soft:  #f5edde;
+  --landing-cream:      #dde8f0;
+  --landing-line:       rgba(84, 122, 149, 0.13);
+
+  background:
+    radial-gradient(circle at 13% 20%, rgba(200, 220, 235, 0.75), transparent 30%),
+    radial-gradient(circle at 88% 28%, rgba(194, 165, 109, 0.3), transparent 25%),
+    linear-gradient(135deg, #f5f8fb 0%, #edf2f7 48%, #f8f9fb 100%);
+}
+
+[data-theme="blue"] .landing-refined .landing-nav {
+  background: rgba(240, 244, 248, 0.82);
+  border-bottom-color: rgba(84, 122, 149, 0.15);
+}
+
+[data-theme="blue"] .landing-refined .nav-login {
+  border-color: rgba(84, 122, 149, 0.2);
+}
+
+[data-theme="blue"] .landing-refined .hero-copy h1 em {
+  color: #547A95;
+}
+
+[data-theme="blue"] .landing-refined .hero-copy > p {
+  color: #4a5f72;
+}
+
+[data-theme="blue"] .landing-refined .hero-secondary {
+  background: linear-gradient(135deg, #f5edde, #ecdfc8);
+  border-color: rgba(194, 165, 109, 0.4);
+}
+
+[data-theme="blue"] .landing-refined .hero-dashboard {
+  background: rgba(248, 251, 253, 0.88);
+}
+
+[data-theme="blue"] .landing-refined .hero-dash-stats i {
+  background: linear-gradient(145deg, #f0f4f8, #e8f0f6);
+}
+
+[data-theme="blue"] .landing-refined .hero-dash-stats i:nth-child(2) {
+  background: linear-gradient(145deg, #fdf6eb, #f8edda);
+}
+
+[data-theme="blue"] .landing-refined .hero-dash-chart span {
+  background: #547A95;
+}
+
+[data-theme="blue"] .landing-refined .hero-dash-chart span:nth-child(even) {
+  background: #C2A56D;
+}
+
+[data-theme="blue"] .hero-dash-footer strong {
+  color: #28396C;
+}
+
+[data-theme="blue"] .landing-refined .chip-positive {
+  color: #28396C;
+}
+
+[data-theme="blue"] .landing-refined .chip-positive span {
+  background: #547A95;
+}
+
+[data-theme="blue"] .landing-refined .chip-negative {
+  color: #8a6a2e;
+}
+
+[data-theme="blue"] .landing-refined .chip-negative span {
+  background: #C2A56D;
+}
+
+[data-theme="blue"] .float-metric strong {
+  color: #28396C;
+}
+
+[data-theme="blue"] .landing-refined .hero-live-badge {
+  color: #547A95;
+}
+
+[data-theme="blue"] .landing-refined .hero-live-badge i {
+  background: #547A95;
+  box-shadow: 0 0 0 4px rgba(84, 122, 149, 0.15);
+}
+
+[data-theme="blue"] .landing-refined .landing-features article:hover {
+  border-color: rgba(84, 122, 149, 0.3);
+}
+
+[data-theme="blue"] .landing-refined .landing-features article > span {
+  color: #547A95;
+}
+
+[data-theme="blue"] .hero-glow-left {
+  background: radial-gradient(circle, rgba(200, 220, 240, 0.6), rgba(200, 220, 240, 0));
+}
+
+[data-theme="blue"] .hero-glow-right {
+  background: radial-gradient(circle, rgba(194, 165, 109, 0.28), rgba(194, 165, 109, 0));
+}
+
+/* App pages */
+[data-theme="blue"] body.opinia-app {
+  background-color: var(--op-bg);
+  color: var(--op-text);
+}
+
+[data-theme="blue"] body.opinia-app .sidebar {
+  background-color: var(--op-sidebar-bg);
+  border-right-color: var(--op-border);
+}
+
+[data-theme="blue"] body.opinia-app .sidebar-header h3 {
+  color: var(--op-primary-dark);
+}
+
+[data-theme="blue"] body.opinia-app .sidebar-menu li a {
+  color: var(--op-sidebar-muted);
+}
+
+[data-theme="blue"] body.opinia-app .sidebar-menu li a:hover,
+[data-theme="blue"] body.opinia-app .sidebar-menu li.active a {
+  background-color: var(--op-sidebar-active);
+  color: var(--op-primary-dark);
+}
+
+[data-theme="blue"] body.opinia-app .stat-card.accent {
+  background: var(--op-primary-soft);
+}
+
+[data-theme="blue"] body.opinia-app .page-btn.active {
+  background: var(--op-primary);
+  border-color: var(--op-primary);
+}
+
+/* Riwayat tab underline */
+[data-theme="blue"] .history-tab::after {
+  background: #547A95;
+}
+
+[data-theme="blue"] .history-tab.active {
+  color: #2C3947;
+}
+
+/* Manual badge warna di riwayat */
+[data-theme="blue"] .manual-filter-group input:focus,
+[data-theme="blue"] .manual-filter-group select:focus {
+  border-color: #547A95;
+  box-shadow: 0 0 0 3px rgba(84, 122, 149, 0.12);
+}
+
+[data-theme="blue"] .manual-history-button.primary {
+  background: #547A95;
+}
+
+[data-theme="blue"] .manual-create-link {
+  background: #dde8f0;
+  color: #28396C;
+}
+
+/* Prediksi manual */
+[data-theme="blue"] .manual-kicker {
+  color: #547A95;
+}
+
+[data-theme="blue"] #manualText:focus {
+  border-color: #547A95;
+  box-shadow: 0 0 0 3px rgba(84, 122, 149, 0.1);
+}
+
+[data-theme="blue"] .manual-btn-primary {
+  background: #547A95;
+}
+
+[data-theme="blue"] .manual-btn-primary:hover:not(:disabled) {
+  background: #28396C;
+}
+
+[data-theme="blue"] .result-comment-box {
+  border-left-color: #547A95;
+}
+
+[data-theme="blue"] .manual-info-card h3 {
+  color: #547A95;
+}
+
+/* PDF report */
+[data-theme="blue"] .pdf-metric-value {
+  color: #547A95;
+}
+
+[data-theme="blue"] .pdf-metric-bar span {
+  background: #547A95;
+}
+
+[data-theme="blue"] .pdf-brand-name {
+  color: #2C3947;
+}
+
+/* Laporan */
+[data-theme="blue"] .recommendation-box {
+  border-left-color: #547A95;
+  background: #edf4fa;
+}
+
+[data-theme="blue"] .annotation-card {
+  border-left-color: #547A95;
+}
+/* ============================================================
+   LOGIN & AUTH — Blue theme override
+   ============================================================ */
+
+[data-theme="blue"] .opinia-auth-page {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(200, 220, 240, 0.7), transparent 33%),
+    radial-gradient(circle at 92% 88%, rgba(194, 165, 109, 0.35), transparent 27%),
+    #f0f4f8;
+}
+
+[data-theme="blue"] .auth-shell {
+  border-color: rgba(84, 122, 149, 0.2);
+}
+
+[data-theme="blue"] .auth-visual {
+  background: linear-gradient(145deg, #e8f0f6, #f0f5f9);
+}
+
+[data-theme="blue"] .auth-brand-mark {
+  background: #2C3947;
+}
+
+[data-theme="blue"] .auth-input:focus-within {
+  border-color: #547A95;
+  box-shadow: 0 0 0 4px rgba(84, 122, 149, 0.1);
+}
+
+[data-theme="blue"] .auth-submit {
+  background: #547A95;
+  box-shadow: 0 12px 26px rgba(84, 122, 149, 0.25);
+}
+
+[data-theme="blue"] .auth-submit:hover {
+  background: #28396C;
+}
+
+[data-theme="blue"] .auth-switch a {
+  color: #28396C;
+}
+
+[data-theme="blue"] .glow-one {
+  background: rgba(200, 220, 240, 0.65);
+}
+
+[data-theme="blue"] .glow-two {
+  background: rgba(194, 165, 109, 0.45);
+}
+
+[data-theme="blue"] .mini-chart i {
+  background: linear-gradient(180deg, #7aa3be, #547A95);
+}
+
+[data-theme="blue"] .mini-chart i:nth-child(2),
+[data-theme="blue"] .mini-chart i:nth-child(4) {
+  background: linear-gradient(180deg, #d4bc8a, #C2A56D);
+}
+/* Logout modal */
+[data-theme="blue"] .logout-modal-icon {
+  background: #dde8f0;
+  color: #547A95;
+}
+
+[data-theme="blue"] .logout-confirm-btn,
+[data-theme="blue"] .logout-modal button.primary {
+  background: #2C3947;
+}
+
+/* Avatar/ikon orang */
+[data-theme="blue"] .user-avatar {
+  filter: hue-rotate(180deg) saturate(0.7);
+}
+/* Logout modal — blue theme */
+[data-theme="blue"] .opinia-logout-icon {
+  border-color: #c8d9e8;
+  background: #dde8f0;
+  color: #2C3947;
+}
+
+[data-theme="blue"] .opinia-logout-confirm {
+  border-color: #28396C;
+  background: #547A95;
+  box-shadow: 0 10px 24px rgba(84, 122, 149, 0.25);
+}
+
+[data-theme="blue"] .opinia-logout-confirm:hover {
+  background: #28396C;
+  border-color: #28396C;
+}
+[data-theme="blue"] {
+  --op-pink: #547A95;
+}
+
+.delete-dataset-btn{
+  border: none;
+  background: transparent;
+  color: #7aa7e8;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+  transition: .25s;
+}
+
+.delete-dataset-btn:hover{
+  color: #4f8ee8;
+  transform: rotate(-10deg) scale(1.15);
+}
+/* Upload */
+body.opinia-app .info-box {
+    border: 1px solid var(--op-primary);
+    background: var(--op-surface);
+    color: var(--op-primary-dark);
+}
+body.opinia-app .data-table th,
+body.opinia-app .history-table th {
+  padding: 13px 14px;
+  background: var(--op-table-header);
+  color: #665b5e;
+  border-bottom: 1px solid var(--op-border-strong);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+

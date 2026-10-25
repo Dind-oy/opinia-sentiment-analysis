@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar - Opinia</title>
+  <link rel="icon" type="image/png" href="ui/2.png">
+  <script src="js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="css/opinia-auth.css">
+  <link rel="stylesheet" href="css/opinia-theme-blue.css">
+</head>
+<body class="opinia-auth-page">
+  <main class="auth-shell register-shell">
+    <section class="auth-visual" aria-label="Ilustrasi dashboard analisis">
+      <a class="auth-brand" href="index.html">
+        <span class="auth-brand-mark">op</span>
+        <span><strong>Opinia</strong><small>Sentiment Intelligence</small></span>
+      </a>
+
+      <div class="visual-stage register-stage">
+        <div class="visual-glow glow-one"></div>
+        <div class="visual-glow glow-two"></div>
+        <div class="dashboard-preview">
+          <div class="preview-sidebar"></div>
+          <div class="preview-content">
+            <div class="preview-cards"><i></i><i></i><i></i></div>
+            <div class="preview-line"><svg viewBox="0 0 320 100" aria-hidden="true"><path d="M4 82 C45 65,58 75,90 50 S135 35,162 57 S220 78,254 32 S292 22,316 10" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-copy">
+        <span class="eyebrow">MULAI ANALISIS</span>
+        <h1>Satu akun untuk seluruh proses penelitian sentimen.</h1>
+        <p>Data setiap pengguna dipisahkan agar riwayat, visualisasi, dan laporan tetap konsisten.</p>
+      </div>
+    </section>
+
+    <section class="auth-form-panel">
+      <div class="auth-form-wrap register-form-wrap">
+        <div class="mobile-brand"><span class="auth-brand-mark">op</span><strong>Opinia</strong></div>
+        <span class="form-kicker">PENDAFTARAN AKUN</span>
+        <h2>Buat akun baru</h2>
+        <p class="form-lead">Lengkapi data untuk memulai analisis sentimen.</p>
+
+        <form id="registerForm" novalidate>
+          <div class="auth-field"><label for="namaLengkap">Nama lengkap</label><div class="auth-input"><span class="field-icon">A</span><input type="text" id="namaLengkap" autocomplete="name" placeholder="Masukkan nama lengkap" required></div></div>
+          <div class="auth-field"><label for="usernameReg">Username</label><div class="auth-input"><span class="field-icon">@</span><input type="text" id="usernameReg" autocomplete="username" placeholder="Pilih username unik" required></div></div>
+          <div class="auth-field"><label for="passwordReg">Password</label><div class="auth-input"><span class="field-icon">●</span><input type="password" id="passwordReg" autocomplete="new-password" placeholder="Minimal 4 karakter" required><button type="button" class="toggle-password" onclick="togglePassword('passwordReg')" aria-label="Tampilkan password">◉</button></div></div>
+          <div class="auth-field"><label for="passwordConfirm">Konfirmasi password</label><div class="auth-input"><span class="field-icon">●</span><input type="password" id="passwordConfirm" autocomplete="new-password" placeholder="Ulangi password" required><button type="button" class="toggle-password" onclick="togglePassword('passwordConfirm')" aria-label="Tampilkan password">◉</button></div></div>
+          <button type="submit" class="auth-submit">Daftar <span>→</span></button>
+        </form>
+
+        <p class="auth-switch">Sudah memiliki akun? <a href="login.html">Masuk di sini</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

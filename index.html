@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opinia</title>
+  <link rel="icon" type="image/png" href="ui/2.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="css/opinia-auth.css">
+  <link rel="stylesheet" href="css/opinia-landing-refined.css">
+  <link rel="stylesheet" href="css/opinia-theme-blue.css">
+  <style>
+    /* Theme toggle widget */
+    .theme-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px;
+      border: 1px solid rgba(107, 90, 96, 0.15);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(10px);
+    }
+
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 13px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #888;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .theme-toggle-btn .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .theme-toggle-btn[data-theme="pink"] .dot {
+      background: #d985a5;
+    }
+
+    .theme-toggle-btn[data-theme="blue"] .dot {
+      background: #547A95;
+    }
+
+    .theme-toggle-btn.active {
+      background: #fff;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+
+<body class="landing-page landing-refined">
+  <header class="landing-nav">
+    <a class="landing-brand" href="index.html" aria-label="Beranda Opinia">
+      <span class="auth-brand-mark">op</span>
+      <span>
+        <strong>Opinia</strong>
+        <small>Academic Sentiment Platform</small>
+      </span>
+    </a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="#about">Tentang</a>
+
+      <!-- Theme switcher -->
+      <div class="theme-switcher" aria-label="Pilih tema warna">
+        <button class="theme-toggle-btn" data-theme="pink" title="Tema Pink">
+          <span class="dot"></span> Default
+        </button>
+        <button class="theme-toggle-btn" data-theme="blue" title="Tema Biru">
+          <span class="dot"></span> Blue
+        </button>
+      </div>
+
+      <a class="nav-login" href="login.html">Masuk</a>
+    </nav>
+  </header>
+
+  <main class="landing-hero refined-hero">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
+    <div class="landing-orbit orbit-a" aria-hidden="true"></div>
+    <div class="landing-orbit orbit-b" aria-hidden="true"></div>
+    <div class="landing-orbit orbit-c" aria-hidden="true"></div>
+
+    <div class="hero-data-signature" aria-hidden="true">
+      <span>RF</span>
+      <i></i>
+      <span>TF-IDF</span>
+      <i></i>
+      <span>2 CLASS</span>
+    </div>
+
+    <section class="hero-copy">
+      <div class="hero-kicker-row">
+        <span class="eyebrow">INTELLIGENT SENTIMENT ANALYSIS</span>
+        <span class="hero-live-badge">
+          <i></i>
+          Academic workflow
+        </span>
+      </div>
+
+      <h1>
+        <span>Memahami opini pengguna</span>
+        <span>secara otomatis.</span>
+      </h1>
+
+      <p>
+        Analisis sentimen ulasan berbasis Machine Learning —
+        cepat, akurat, dan siap untuk kebutuhan akademik.
+      </p>
+
+      <div class="hero-actions">
+        <a class="hero-primary" href="login.html">
+          Masuk
+          <span>→</span>
+        </a>
+        <a class="hero-secondary" href="daftar.html">
+          Daftar
+        </a>
+      </div>
+
+      <div class="hero-meta" aria-label="Keunggulan Opinia">
+        <span><b>2</b> kelas sentimen</span>
+        <span><b>RF</b> model klasifikasi</span>
+        <span><b>PDF</b> laporan akademik</span>
+      </div>
+    </section>
+
+    <section class="hero-visual" aria-label="Pratinjau visualisasi sentimen">
+      <div class="visual-backplate" aria-hidden="true"></div>
+
+      <div class="hero-dashboard">
+        <div class="hero-dash-head">
+          <span></span><span></span><span></span>
+          <small>Sentiment overview</small>
+        </div>
+
+        <div class="hero-dash-stats">
+          <i>
+            <small>Positive</small>
+            <b>33%</b>
+          </i>
+          <i>
+            <small>Negative</small>
+            <b>67%</b>
+          </i>
+        </div>
+
+        <div class="hero-dash-chart" aria-hidden="true">
+          <span style="--h:36%"></span>
+          <span style="--h:58%"></span>
+          <span style="--h:46%"></span>
+          <span style="--h:82%"></span>
+          <span style="--h:68%"></span>
+        </div>
+
+        <div class="hero-dash-footer">
+          <span>Model confidence</span>
+          <strong>89.5%</strong>
+        </div>
+      </div>
+
+      <div class="float-chip chip-positive">
+        <span></span>
+        Positive
+      </div>
+
+      <div class="float-chip chip-negative">
+        <span></span>
+        Negative
+      </div>
+
+      <div class="float-metric metric-one" aria-hidden="true">
+        <small>Accuracy</small>
+        <strong>89.5%</strong>
+      </div>
+    </section>
+  </main>
+
+  <section id="about" class="landing-features">
+    <article>
+      <span>01</span>
+      <h2>Data terpisah per akun</h2>
+      <p>Dataset dan riwayat setiap pengguna disimpan secara terpisah.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h2>Prediksi real-time</h2>
+      <p>Masukkan komentar dan lihat hasil sentimennya secara langsung.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h2>Laporan siap cetak</h2>
+      <p>Ringkasan A4 yang rapi, konsisten, dan mudah digunakan.</p>
+    </article>
+  </section>
+
+  <footer class="landing-footer">
+    <strong>Opinia</strong>
+    <span>© 2026 Academic Sentiment Analysis</span>
+  </footer>
+</body>
+</html>

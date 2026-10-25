@@ -1,0 +1,146 @@
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-btn {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  display: grid;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  place-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #dc3545;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.notification-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 2000;
+  width: 340px;
+  max-height: 430px;
+  overflow: hidden;
+  border: 1px solid #e5e2e1;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(28, 27, 27, 0.15);
+}
+
+.notification-panel[hidden] {
+  display: none;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 16px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.notification-header strong {
+  color: #1c1b1b;
+  font-size: 14px;
+}
+
+.notification-header button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #174ea6;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.notification-list {
+  max-height: 310px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+  gap: 11px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #f0eded;
+  background: #ffffff;
+}
+
+.notification-item.unread {
+  background: #fff8fa;
+}
+
+.notification-item > div {
+  flex: 1;
+}
+
+.notification-item strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #1c1b1b;
+  font-size: 12px;
+}
+
+.notification-item p {
+  margin: 0 0 5px;
+  color: #4d4447;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.notification-item small {
+  color: #999999;
+  font-size: 9px;
+}
+
+.notification-icon {
+  display: grid;
+  flex: 0 0 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.notification-icon.success {
+  background: #d9f5e8;
+  color: #14804a;
+}
+
+.notification-icon.error {
+  background: #ffe0e0;
+  color: #c62828;
+}
+
+.notification-clear {
+  width: 100%;
+  padding: 11px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  background: #ffffff;
+  color: #ba1a1a;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.notification-clear:hover {
+  background: #fff5f5;
+}
+
+.notification-empty {
+  padding: 35px 16px;
+  color: #999999;
+  font-size: 12px;
+  text-align: center;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Dashboard Utama - Opinia</title>
+  <link rel="icon" type="image/png" href="ui/2.png">
+  <script src="js/theme-toggle.js"></script>
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="css/notifications.css" rel="stylesheet"/>
+  <link href="css/opinia-theme.css" rel="stylesheet"/>
+  <link href="css/opinia-theme-blue.css" rel="stylesheet"/>
+  <script src="js/session-guard.js"></script>
+</head>
+<body class="opinia-app">
+<div class="wrapper">
+<!-- Sidebar -->
+<aside class="sidebar">
+<div class="sidebar-header">
+<h3>ML Sentiment<br/>Analyzer</h3>
+</div>
+<!-- User Profile -->
+<div class="user-profile">
+<img alt="User Avatar" class="user-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23d4a5a5'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23fff'/%3E%3Cpath d='M30 70 Q50 60 70 70 L70 100 L30 100 Z' fill='%23fff'/%3E%3C/svg%3E"/>
+<div class="user-info">
+<p class="user-name">Pengguna</p>
+<p class="user-role">Researcher</p>
+</div>
+</div>
+<ul class="sidebar-menu">
+<li class="active"><a href="dashboard.html"><span class="menu-icon">📊</span> Dashboard</a></li>
+<li><a href="upload-dataset.html"><span class="menu-icon">📁</span> Upload Dataset</a></li>
+<li><a href="klasifikasi.html"><span class="menu-icon">🏷️</span> Klasifikasi Sentimen</a></li>
+<li><a href="prediksi-manual.html"><span class="menu-icon">🧠</span> Prediksi Manual</a></li>
+<li><a href="visualisasi.html"><span class="menu-icon">📈</span> Visualisasi</a></li>
+<li><a href="riwayat.html"><span class="menu-icon">⏱️</span> Riwayat Analisis</a></li>
+<li><a href="laporan.html"><span class="menu-icon">📄</span> Laporan</a></li>
+</ul>
+<div class="sidebar-footer">
+<a class="logout" href="backend/logout_redirect.php"><span>🚪</span> Logout</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="main-content">
+<header class="topbar">
+<h2></h2>
+<div class="topbar-right">
+<button class="notification-btn">🔔</button>
+</div>
+</header>
+<div class="content">
+<!-- Greeting Section -->
+<div class="greeting-section">
+<h1>Hello, Pengguna</h1>
+<p>Ringkasan analisis sentimen dari dataset milik akun Anda.</p>
+</div>
+<!-- Stats Cards -->
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-label">TOTAL DATASET</div>
+<div class="stat-value">0</div>
+<div class="stat-change">— 0% this week</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">SENTIMEN POSITIF</div>
+<div class="stat-value">0</div>
+<div class="stat-badge positive-badge">0% of total</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">SENTIMEN NEGATIF</div>
+<div class="stat-value">0</div>
+<div class="stat-badge negative-badge">0% of total</div>
+</div>
+<div class="stat-card accent">
+<div class="stat-label">AKURASI MODEL</div>
+<div class="stat-value">89.5%</div>
+<div class="stat-progress">
+<div class="progress-bar"></div>
+</div>
+</div>
+</div>
+<!-- Chart Section -->
+<div class="card chart-card">
+<div class="card-header">
+<h3>Perbandingan Sentimen</h3>
+<p class="card-desc">Distribusi hasil analisis sentimen pada dataset aktif.</p>
+<button class="menu-dots">⋮</button>
+</div>
+<div class="chart-container"></div>
+</div>
+</div>
+</main>
+</div>
+<script src="js/notifications.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/opinia-ui.js"></script>
+<script src="js/logout-confirm.js"></script>
+</body>
+</html>
