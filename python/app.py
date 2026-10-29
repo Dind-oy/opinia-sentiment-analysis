@@ -9,17 +9,23 @@ import pymysql
 import pymysql.cursors
 from datetime import datetime
 
+
 # ============================================================
-# KONFIGURASI DATABASE 
+# KONFIGURASI DATABASE TiDB CLOUD
 # ============================================================
 DB_CONFIG = {
-    'host': '127.0.0.1',
-    'user': 'root',
-    'password': '',           # isi password MySQL kamu
+    'host': 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+    'port': 4000,
+    'user': 'pDkrfgWfYnfmnES.root',
+    'password': os.environ['TIDB_PASSWORD'],
     'database': 'db_sentimen_mlbb',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,
+    'ssl_ca': os.path.join(os.path.dirname(__file__), 'certs', 'isrgrootx1.pem'),
+    'ssl_verify_cert': True,
+    'ssl_verify_identity': True,
 }
+
 
 def get_db():
     """Buka koneksi ke MySQL."""
